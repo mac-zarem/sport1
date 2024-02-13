@@ -48,7 +48,6 @@ public class Game {
         this.setAwayTeamName(name2);
         this.setHomeTeamGoals(0);
         this.setAwayTeamGoals(0);
-
     }
 
     public void updateScore(int homeGoals, int awayGoals){
