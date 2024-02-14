@@ -9,11 +9,8 @@ public class ScoreBoard {
 
     public void startNewGame(String homeT, String awayT){
         Game g1 = new Game(homeT,awayT);
-        if(games.add(g1)){
-            System.out.println("New game started.");
-        } else{
-            System.out.println("Something wrong, new game didn't start.");
-        }
+        games.add(g1);
+        System.out.println("New game started.");
     }
 
     public void updateScore(int homeGoals, int awayGoals, int gameId){
@@ -36,4 +33,5 @@ public class ScoreBoard {
             }
         }
     }
+
 }

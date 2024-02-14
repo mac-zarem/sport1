@@ -1,6 +1,6 @@
 package org.mz;
 
-public class Game {
+public class Game implements Comparable<Game>{
 
     public String getHomeTeamName() {
         return homeTeamName;
@@ -43,7 +43,7 @@ public class Game {
     private int homeTeamGoals;
     private int awayTeamGoals;
 
-    Game(String name1, String name2){
+    public Game(String name1, String name2){
         this.setHomeTeamName(name1);
         this.setAwayTeamName(name2);
         this.setHomeTeamGoals(0);
@@ -53,5 +53,11 @@ public class Game {
     public void updateScore(int homeGoals, int awayGoals){
         this.setHomeTeamGoals(homeGoals);
         this.setAwayTeamGoals(awayGoals);
+    }
+
+    @Override
+    public int compareTo(Game o) {
+        return Integer.compare(o.getHomeTeamGoals() + o.getAwayTeamGoals(),
+                this.getHomeTeamGoals() + this.getAwayTeamGoals());
     }
 }
